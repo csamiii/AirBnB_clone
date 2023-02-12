@@ -178,14 +178,16 @@ class HBNBCommand(cmd.Cmd):
 
     @staticmethod
     def default_parser(line):
-        pattern = "^(?P<cls_name>[a-zA-Z]+)\.(?P<method_name>[a-zA-Z]+)\((?P<args>.*)\)"
+        pattern1 = "^(?P<cls_name>[a-zA-Z]+)\\."
+        pattern2 = "(?P<method_name>[a-zA-Z]+)\\((?P<args>.*)\\)"
+        pattern = pattern1+pattern2
 
         test = re.match(pattern, line)
         if test:
-            sout1 = test.group("cls_name")
-            sout2 = test.group("method_name")
-            sout3 = test.group("args")
-            return [sout1, sout2, sout3]
+            cls_name = test.group("cls_name")
+            method_name = test.group("method_name")
+            args = test.group("args")
+            return [cls_name, method_name, args]
 
         return None
 
