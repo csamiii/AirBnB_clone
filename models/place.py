@@ -1,31 +1,10 @@
-#!/usr/bin/python3
-'''
-This Module creates the Place Class
-'''
-
-from .base_model import BaseModel
+#!/usr/bin/python
+""" holds class Place"""
+from models.base_model import BaseModel
 
 
 class Place(BaseModel):
-    '''
-    A class to represent the Place model
-    from which place instances will be created.
-
-    ...
-    Public Attributes
-    ----------------
-    city_id: str - the City.id
-    user_id: str - the User.id
-    name: str - Place name
-    description: str - Place description
-    number_rooms: int
-    number_bathrooms: int
-    max_guest: int
-    price_by_night: int
-    latitude: float
-    longitude: float
-    amenity_ids: list of str - the list of Amenity.id
-    '''
+    """Representation of Place """
     city_id = ""
     user_id = ""
     name = ""
@@ -37,3 +16,7 @@ class Place(BaseModel):
     latitude = 0.0
     longitude = 0.0
     amenity_ids = []
+
+    def __init__(self, *args, **kwargs):
+        """initializes Place"""
+        super().__init__(*args, **kwargs)

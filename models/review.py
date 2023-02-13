@@ -1,23 +1,14 @@
-#!/usr/bin/python3
-'''
-This Module creates the Review Class
-'''
-
-from .base_model import BaseModel
+#!/usr/bin/python
+""" holds class Review"""
+from models.base_model import BaseModel
 
 
 class Review(BaseModel):
-    '''
-    A class to represent the Review model
-    from which review instances will be created.
-
-    ...
-    Public Attributes
-    ----------------
-    place_id : str - The Place id
-    user_id : str - The User id
-    text : str
-    '''
+    """Representation of Review """
     place_id = ""
     user_id = ""
     text = ""
+
+    def __init__(self, *args, **kwargs):
+        """initializes Review"""
+        super().__init__(*args, **kwargs)
