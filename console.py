@@ -224,12 +224,12 @@ class HBNBCommand(cmd.Cmd):
 
             if cls_name in HBNBCommand.__class_set:
                 cls_obj = globals()[cls_name]
-                status = ["show", "destroy"] and len(args_list)
+                method_list = ["show", "destroy"]
+                args_len = len(args_list)
 
                 if method_name in ["all", "count"]:
                     print(getattr(cls_obj, method_name)())
-
-                elif method_name in status == 1:
+                elif method_name in method_list and args_len == 1:
                     id = args.strip('"')
                     called_method = getattr(cls_obj, method_name)(id)
 
@@ -243,8 +243,8 @@ class HBNBCommand(cmd.Cmd):
                 elif method_name == "update":
                     parsed_args = HBNBCommand.args_update_parser(args_list)
                     getattr(cls_obj, method_name)(*parsed_args)
-                else:
-                    print("*** Unknown syntax: "+line)
+        else:
+            print("*** Unknown syntax: "+line)
 
 
 if __name__ == '__main__':
