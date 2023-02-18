@@ -14,7 +14,7 @@ This project is interpreted/tested on Ubuntu 14.04 LTS using python3 (version 3.
 
 ## Installation
 
-- Clone this repository: git clone "https://github.com/PaschalALX/AirBnB_clone.git"
+- Clone this repository: git clone "https://github.com/csamiii/AirBnB_clone.git"
 - Access AirBnb directory: cd AirBnB_clone
 - Run hbnb(interactively): ./console and enter command
 - Run hbnb(non-interactively): echo "<command>" | ./console.py
@@ -30,4 +30,4 @@ All the code is tested with the unittest module. The test for the classes are in
 
 ## Authors
 
-- Paschal-Mark Okafor - [PaschalMark](https://github.com/PaschalALX)
+- Chidi Onwumere - [csamiii](https://github.com/csamiii)
